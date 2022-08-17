@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<h1>Найдено со скиллом {{skill_name}}: {{len(cands_by_skills)}}</h1>
+<h1>Найдено со скиллом {{skill_name}}: {{len_cands}}</h1>
 {%for item in cands_by_skills%}
-  <p><a href="/skill/<x>">{{item["name"]}}</a></p>
-{{%endfor%}}
+  <p><a href="/candidate/{{item['id']}}">{{item["name"]}}</a></p>
+{%endfor%}
 </body>
 </html>
