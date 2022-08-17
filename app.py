@@ -27,12 +27,14 @@ def page_name(candidate_name):
     page = render_template("search.html", cands_by_name=cands_by_name, len_cands=len_cands)
     return page
 
-@app.route("/skill/<skill_name>")
+@app.route("/skill/<skill_name>/")
 def page_skills(skill_name):
     candidates = utils.load_candidates_from_json()
     cands_by_skills = utils.get_candidates_by_skill(skill_name)
-    page = render_template("skill.html", cands_by_skills=cands_by_skills)
+    len_cands = len(cands_by_skills)
+    page = render_template("skill.html", cands_by_skills=cands_by_skills, len_cands=len_cands)
     return page
 
 if __name__ == "__main__":
     app.run()
+
